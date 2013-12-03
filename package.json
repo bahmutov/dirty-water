@@ -1,0 +1,23 @@
+{
+  "name": "dirty-water",
+  "version": "0.0.0",
+  "description": "Measures Js \"dirt\" in HTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "template",
+    "quality",
+    "measurement",
+    "html"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bin": "index.js",
+  "dependencies": {
+    "optimist": "~0.6.0",
+    "update-notifier": "~0.1.7"
+  }
+}
