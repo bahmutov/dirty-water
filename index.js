@@ -26,6 +26,11 @@ var program = optimist
   description: 'show version and exit',
   default: false
 })
+.option('filename', {
+  string: true,
+  alias: 'f',
+  description: 'source filename'
+})
 .usage(info)
 .argv;
 
@@ -34,7 +39,7 @@ if (program.version) {
   process.exit(0);
 }
 
-if (program.help) {
+if (program.help || !program.filename) {
   optimist.showHelp();
   process.exit(0);
 }
@@ -46,3 +51,8 @@ var notifier = updateNotifier();
 if (notifier.update) {
   notifier.notify();
 }
+
+var measure = require('./src/measure');
+measure({
+  filename: program.filename
+});
