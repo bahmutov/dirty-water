@@ -1,7 +1,7 @@
 {
   "name": "dirty-water",
   "version": "0.0.0",
-  "description": "Measures Js \"dirt\" in HTML",
+  "description": "Measures JavaScript \"dirt\" in HTML files",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,6 +16,10 @@
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "bin": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bahmutov/dirty-water.git"
+  },
   "dependencies": {
     "optimist": "~0.6.0",
     "update-notifier": "~0.1.7"
