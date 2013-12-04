@@ -1,5 +1,10 @@
 {
-  "src": ["Gruntfile.js", "src/*.js"],
+  "src": "skip index.js that has shebang line",
+  "src": [
+    "*.js",
+    "src/*.js",
+    "!index.js"
+  ],
   "options": {
     "errorsOnly": false,
     "cyclomatic": 7,
