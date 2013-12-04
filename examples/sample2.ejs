@@ -1,0 +1,13 @@
+<div class="something">
+<% if(foo > 500){%>
+    <div class="response">
+        <span class="label <%=(success)? 'label-success':((failed)?'label-important':'')%>">
+            status: <%=localeString(statusId)%>
+            <%=(success)? "(" + $.something("rate: " + rate) + ")" : ""%>
+        </span>
+        <%if(!failed){%>
+        <span class="label label-info">prize: <%=prixe)%></span>
+        <%}%>
+    </div>
+<%}%>
+</div>

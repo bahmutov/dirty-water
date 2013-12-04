@@ -17,6 +17,7 @@
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "bin": "index.js",
+  "preferGlobal": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/bahmutov/dirty-water.git"

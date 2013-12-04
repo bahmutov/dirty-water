@@ -18,7 +18,7 @@ var program = optimist
   string: true,
   alias: 't',
   description: 'main file type (html, js, css)',
-  default: 'html'
+  default: '' // determine from file extension
 })
 .options('dirt', {
   string: true,
