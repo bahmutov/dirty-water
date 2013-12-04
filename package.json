@@ -30,6 +30,11 @@
   "devDependencies": {
     "grunt": "~0.4.2",
     "matchdep": "~0.3.0",
-    "grunt-deps-ok": "~0.1.7"
+    "grunt-deps-ok": "~0.1.7",
+    "grunt-jsonlint": "~1.0.4",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-jshint-solid": "0.0.1",
+    "grunt-nice-package": "~0.1.5",
+    "grunt-complexity": "~0.1.3"
   }
 }

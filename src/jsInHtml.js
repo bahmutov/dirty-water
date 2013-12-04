@@ -4,8 +4,8 @@ var S = require('string');
 var color = require('cli-color');
 
 function measureJsInHtml(options) {
-  check.verify.unemptyString(options.filename, 'missing filename in '
-    + JSON.stringify(options, null, 2));
+  check.verify.unemptyString(options.filename,
+    'missing filename in ' + JSON.stringify(options, null, 2));
 
   var src = fs.readFileSync(options.filename, 'utf-8');
   var n = S(src).lines().length;
