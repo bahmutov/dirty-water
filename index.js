@@ -7,6 +7,7 @@ if (module.parent) {
 }
 
 var pkg = require('./package.json');
+var check = require('check-types');
 
 var info = pkg.name + ' - ' + pkg.description + '\n' +
   '  version: ' + pkg.version + '\n' +
@@ -40,12 +41,20 @@ var program = optimist
 .usage(info)
 .argv;
 
+if (!program.filename) {
+  // grab unmatched arguments
+  program.filename = program._;
+}
+if (check.string(program.filename)) {
+  program.filename = [program.filename];
+}
+
 if (program.version) {
   console.log(info);
   process.exit(0);
 }
 
-if (program.help || !program.filename) {
+if (program.help || !program.filename.length) {
   optimist.showHelp();
   process.exit(0);
 }

@@ -12,7 +12,7 @@ function toInternalDirtType(name) {
   return names[name];
 }
 
-module.exports = function (options) {
+function measureFile(options) {
   check.verify.object(options, 'missing options');
   check.verify.unemptyString(options.filename, 'missing filename');
 
@@ -33,4 +33,21 @@ module.exports = function (options) {
 
   throw new Error('Don\'t know how to measure for these options ' +
     JSON.stringify(options, null, 2));
+}
+
+module.exports = function (options) {
+  check.verify.object(options, 'missing options');
+  options.filenames = options.filenames || options.files || options.filename;
+  if (check.string(options.filenames)) {
+    options.filenames = [options.filenames];
+  }
+  check.verify.array(options.filenames, 'missing filenames');
+
+  return options.filenames.map(function (filename) {
+    return measureFile({
+      filename: filename,
+      type: options.type,
+      dirt: options.dirt
+    });
+  });
 };

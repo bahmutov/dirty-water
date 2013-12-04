@@ -1,7 +1,7 @@
 {
   "name": "dirty-water",
   "version": "0.0.0",
-  "description": "Measures JavaScript \"dirt\" in HTML files",
+  "description": "Measures JavaScript \"dirt\" in HTML / EJS / AngularJs template files",
   "main": "index.js",
   "scripts": {
     "test": "node node_modules/gt test/*.js"
@@ -11,9 +11,11 @@
     "template",
     "quality",
     "measurement",
-    "html"
+    "html",
+    "EJS",
+    "AngularJs"
   ],
-  "pre-commit": "grunt",
+  "pre-commit": ["grunt", "npm test"],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "bin": "index.js",

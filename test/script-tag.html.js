@@ -10,7 +10,7 @@ gt.test('js in html', function () {
     type: 'html',
     dirt: 'js'
   });
-  gt.object(result, 'returns an object');
-  gt.equal(result.loc, 21, 'total lines of code');
-  gt.equal(result.dirt, 7, 'number of js lines');
+  gt.object(result[0], 'returns an object');
+  gt.equal(result[0].loc, 21, 'total lines of code');
+  gt.equal(result[0].dirt, 7, 'number of js lines');
 });

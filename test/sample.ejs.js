@@ -15,7 +15,8 @@ gt.test('js in sample.ejs', function () {
     type: 'ejs',
     dirt: 'js'
   });
-  gt.object(result, 'returns an object');
-  gt.equal(result.loc, 13, 'total lines of code');
-  gt.equal(result.dirt, 3, 'number of js lines');
+  gt.array(result, 'returns an array');
+  gt.equal(result.length, 1, 'single object');
+  gt.equal(result[0].loc, 13, 'total lines of code');
+  gt.equal(result[0].dirt, 3, 'number of js lines');
 });
