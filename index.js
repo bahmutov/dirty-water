@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 
-var check = require('check-types');
+var measure = require('./src/measure');
+if (module.parent) {
+  module.exports = measure;
+  return;
+}
+
 var pkg = require('./package.json');
 
 var info = pkg.name + ' - ' + pkg.description + '\n' +
@@ -53,17 +58,8 @@ if (notifier.update) {
   notifier.notify();
 }
 
-function toInternalDirtType(name) {
-  check.verify.unemptyString(name, 'missing name');
-  return {
-    'js': 'js',
-    'javascript': 'javascript'
-  }[name.toLowerCase()];
-}
-
-var measure = require('./src/measure');
 measure({
   filename: program.filename,
   type: program.type.toLowerCase(),
-  dirt: toInternalDirtType(program.dirt)
+  dirt: program.dirt.toLowerCase()
 });
