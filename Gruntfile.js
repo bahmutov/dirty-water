@@ -26,6 +26,14 @@ module.exports = function (grunt) {
       all: {
         options: {}
       }
+    },
+
+    readme: {
+      options: {
+        templates: './docs',
+        readme: './docs/README.tmpl.md',
+        docs: '.'
+      }
     }
   });
 
@@ -34,5 +42,5 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', ['deps-ok', 'jsonlint',
     'jshint', 'jshint-solid',
-    'nice-package', 'complexity']);
+    'nice-package', 'complexity', 'readme']);
 };
