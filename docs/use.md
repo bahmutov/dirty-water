@@ -1,35 +1,10 @@
 ## use
 
-```html
-<!-- include css and js in document's head -->
-<link rel="stylesheet" href="bower_components/color-pusher/dist/color-pusher.css">
-<script src="bower_components/color-pusher/dist/color-pusher.js"></script>
+```sh
+dirty-water *.ejs
 
-<!--
-    Simple:
-
-    include widget as stand alone Angular module
-    at the end of the body for example
--->
-<div ng-app="color-pusher">
-    <color-pusher></color-pusher>
-</div>
+// prints
+dirty-water - Measures JavaScript "dirt" in HTML / EJS / AngularJs template files
+sample.ejs 13 EJS lines 3 js lines
+sample2.ejs 14 EJS lines 8 js lines
 ```
-
-If you already have an Angular application, add *color-pusher* as a dependency
-
-```js
-var app = angular.module('my-app', ['color-pusher']);
-```
-
-You can pass initial list of selectors and colors to the widget
-
-```html
-<color-pusher
-    selectors="body, .well, .info"
-    colors="#f5e384, #9c846e, #9c046e">
-</color-pusher>
-```
-
-Open the widget and click "Apply colors".
-

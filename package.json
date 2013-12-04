@@ -1,6 +1,6 @@
 {
   "name": "dirty-water",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Measures JavaScript \"dirt\" in HTML / EJS / AngularJs template files",
   "main": "index.js",
   "scripts": {

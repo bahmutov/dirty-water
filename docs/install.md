@@ -1,10 +1,7 @@
 ## installation
 
-Requires [nodejs](http://nodejs.org/) and [bower](http://bower.io/)
+Requires [nodejs](http://nodejs.org/)
 
 ```sh
-bower install color-pusher
+npm install -g dirty-water
 ```
-
-To use: requires bootstrap CSS and JS, jquery and angularjs.
-
