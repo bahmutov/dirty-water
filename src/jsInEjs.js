@@ -10,19 +10,24 @@ function measureJsInEjs(options) {
   var src = fs.readFileSync(options.filename, 'utf-8');
   var n = S(src).lines().length;
 
-  var scriptTagRegExp = /<%([\w\W]+)?%>/gi;
-  console.log('EJS matches for\n' + src);
+  var scriptTagRegExp = /(?:\{\{|<%)(.+?)(?:%>|\}\})/g;
+  // console.log('EJS matches for\n' + src);
 
   var foundScript;
   var count = 0;
   while ((foundScript = scriptTagRegExp.exec(src)) !== null) {
     var str = foundScript[0];
-    console.log('found at', scriptTagRegExp.lastIndex + '\n' + str);
+    // console.log('found at', scriptTagRegExp.lastIndex + '\n' + str);
     count += S(str).lines().length;
   }
 
   console.log(options.filename, color.green(n), 'EJS lines',
     count ? color.redBright(count) : color.green(count), 'js lines');
+
+  return {
+    loc: n,
+    dirt: count
+  };
 }
 
 module.exports = measureJsInEjs;

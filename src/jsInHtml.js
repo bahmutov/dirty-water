@@ -23,6 +23,11 @@ function measureJsInHtml(options) {
 
   console.log(options.filename, color.green(n), 'lines',
     count ? color.redBright(count) : color.green(count), 'js lines');
+
+  return {
+    loc: n,
+    dirt: count
+  };
 }
 
 module.exports = measureJsInHtml;
